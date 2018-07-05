@@ -110,4 +110,5 @@ $ npm install
 $ npm run demo.ios
 ```
 This will run the plain NativeScript demo project on iOS. If you want to run it on Android simply use the .android instead of the .ios sufix.
+
 If you want to run the Angular demo simply use the demo.ios.ng.
