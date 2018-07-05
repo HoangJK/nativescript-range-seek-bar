@@ -39,9 +39,11 @@ export class RangeSeekBar extends RangeSeekBarBase {
         crystalRangeSeekBar.setBarHeight(5).apply();
         crystalRangeSeekBar.setMinStartValue(0).apply();
         crystalRangeSeekBar.setMaxStartValue(0).apply();
-        const rangeSeekbarChangeListener = RangeSeekbarChangeListenerImpl.initWithOwner(new WeakRef<RangeSeekBar>(this));
+        initRangeSeekbarChangeListener()
+        const rangeSeekbarChangeListener = new RangeSeekbarChangeListener(new WeakRef<RangeSeekBar>(this));
         crystalRangeSeekBar.setOnRangeSeekbarChangeListener(rangeSeekbarChangeListener);
-        const rangeSeekbarFinalValueListener = RangeSeekbarFinalValueListenerImpl.initWithOwner(new WeakRef<RangeSeekBar>(this));
+        initRangeSeekbarFinalValueListener()
+        const rangeSeekbarFinalValueListener = new RangeSeekbarFinalValueListener(new WeakRef<RangeSeekBar>(this));
         crystalRangeSeekBar.setOnRangeSeekbarFinalValueListener(rangeSeekbarFinalValueListener);
         return crystalRangeSeekBar;
     }
@@ -155,54 +157,77 @@ export class RangeSeekBar extends RangeSeekBarBase {
     }
 }
 
-@Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener])
-export class RangeSeekbarChangeListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
-    public owner: WeakRef<RangeSeekBar>;
-
-    public static initWithOwner(owner: WeakRef<RangeSeekBar>): RangeSeekbarChangeListenerImpl {
-        let listener = new RangeSeekbarChangeListenerImpl();
-        listener.owner = owner;
-        return listener;
-    }
-
-    public valueChanged(minValue: any, maxValue: any): void {
-        if (this.owner && this.owner.get()) {
-            let args = {
-                eventName: RangeSeekBarBase.rangeSeekBarChangedEvent,
-                object: this.owner,
-                value: {
-                    minValue: minValue,
-                    maxValue: maxValue
-                }
-            } as RangeSeekBarEventData;
-            this.owner.get().notify(args);
-        }
-    }
-
+//RangeSeekbarChangeListener START
+interface RangeSeekbarChangeListener extends java.lang.Object, com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
+    new (owner: WeakRef<RangeSeekBar>): RangeSeekbarChangeListener;
 }
 
-@Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener])
-export class RangeSeekbarFinalValueListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
-    public owner: WeakRef<RangeSeekBar>;
+let RangeSeekbarChangeListener: RangeSeekbarChangeListener;
 
-    public static initWithOwner(owner: WeakRef<RangeSeekBar>): RangeSeekbarFinalValueListenerImpl {
-        let listener = new RangeSeekbarFinalValueListenerImpl();
-        listener.owner = owner;
-        return listener;
+function initRangeSeekbarChangeListener() {
+    if (RangeSeekbarChangeListener) {
+        return;
     }
+    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener])
+    class RangeSeekbarChangeListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
 
-    public finalValue(minValue: any, maxValue: any): void {
-        if (this.owner && this.owner.get()) {
-            let args = {
-                eventName: RangeSeekBarBase.rangeSeekBarFinalValueEvent,
-                object: this.owner,
-                value: {
-                    minValue: minValue,
-                    maxValue: maxValue
-                }
-            } as RangeSeekBarEventData;
-            this.owner.get().notify(args);
+        constructor(private owner: WeakRef<RangeSeekBar>) {
+            super();
+            return global.__native(this);
+        }
+
+        public valueChanged(minValue: any, maxValue: any): void {
+            if (this.owner && this.owner.get()) {
+                let args = {
+                    eventName: RangeSeekBarBase.rangeSeekBarChangedEvent,
+                    object: this.owner,
+                    value: {
+                        minValue: minValue,
+                        maxValue: maxValue
+                    }
+                } as RangeSeekBarEventData;
+                this.owner.get().notify(args);
+            }
         }
     }
-
+    RangeSeekbarChangeListener = RangeSeekbarChangeListenerImpl as any;
 }
+//RangeSeekbarChangeListener END
+
+//RangeSeekbarFinalValueListener START
+interface RangeSeekbarFinalValueListener extends java.lang.Object, com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
+    new (owner: WeakRef<RangeSeekBar>): RangeSeekbarFinalValueListener;
+}
+
+let RangeSeekbarFinalValueListener: RangeSeekbarFinalValueListener;
+
+function initRangeSeekbarFinalValueListener() {
+    if (RangeSeekbarFinalValueListener) {
+        return;
+    }
+
+    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener])
+    class RangeSeekbarFinalValueListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
+
+        constructor(private owner: WeakRef<RangeSeekBar>) {
+            super();
+            return global.__native(this);
+        }
+
+        public finalValue(minValue: any, maxValue: any): void {
+            if (this.owner && this.owner.get()) {
+                let args = {
+                    eventName: RangeSeekBarBase.rangeSeekBarFinalValueEvent,
+                    object: this.owner,
+                    value: {
+                        minValue: minValue,
+                        maxValue: maxValue
+                    }
+                } as RangeSeekBarEventData;
+                this.owner.get().notify(args);
+            }
+        }
+    }
+    RangeSeekbarFinalValueListener = RangeSeekbarFinalValueListenerImpl as any;
+}
+//RangeSeekbarFinalValueListener END
