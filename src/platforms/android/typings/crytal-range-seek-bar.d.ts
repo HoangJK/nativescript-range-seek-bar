@@ -1,9 +1,3 @@
-declare namespace native {
-    export class Array<T> {
-        public constructor();
-    }
-}
-
 import javalangNumber = java.lang.Number;
 declare namespace com {
     export namespace crystal {
