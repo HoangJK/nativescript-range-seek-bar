@@ -29,11 +29,11 @@ Gets or sets minimum steps between range, default is 1.
 Gets or sets corner radius of two thumb.
 * **barHeight** - *Number*  
 Gets or sets bar height of the Range Seek Bar.
-* **barColor** - *Number*  
+* **barColor** - *Color*  
 Gets or sets bar color of the Range Seek Bar.
-* **barHighlightColor** - *Number*  
+* **barHighlightColor** - *Color*  
 Gets or sets bar highlight color of the Range Seek Bar.
-* **thumbColor** - *Number*  
+* **thumbColor** - *Color*  
 Gets or sets color of two thumb.
 ## Usage in Angular
 - Import `NativeScriptUIRangeSeekBarModule` in `NgModule`:
