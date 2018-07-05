@@ -25,7 +25,7 @@ import {
     leftThumbHighlightCssProperty,
     rightThumbHighlightProperty,
     rightThumbHighlightCssProperty,
-} from "./nativescript-range-seek-bar.common";
+} from "./range-seek-bar.common";
 import { Color } from "tns-core-modules/color";
 import { layout } from "tns-core-modules/utils/utils";
 

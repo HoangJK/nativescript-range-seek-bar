@@ -1,1 +1,1 @@
-export * from "./nativescript-range-seek-bar.module";
+export * from "./range-seek-bar.module";

@@ -2,7 +2,7 @@
     "name": "nativescript-range-seek-bar",
     "version": "1.0.0",
     "description": "Your awesome NativeScript plugin.",
-    "main": "nativescript-range-seek-bar",
+    "main": "range-seek-bar",
     "typings": "index.d.ts",
     "nativescript": {
         "platforms": {
