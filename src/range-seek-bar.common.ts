@@ -3,25 +3,25 @@ import { Style, CssProperty } from "tns-core-modules/ui/text-base";
 import { Color } from "tns-core-modules/color";
 
 export interface RangeSeekBarEventData extends EventData {
-    eventName: string,
-    object: any,
+    eventName: string;
+    object: any;
     value: {
         minValue: number,
         maxValue: number
-    }
+    };
 }
 
 export class RangeSeekBarBase extends View {
     public static rangeSeekBarChangedEvent = "rangeSeekBarChanged";
     public static rangeSeekBarFinalValueEvent = "rangeSeekBarFinalValue";
-};
+}
 
-//Property
+// Property
 export const minValueProperty = new Property<RangeSeekBarBase, number>({
     name: "minValue",
     defaultValue: 0,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'minValue' must be a number");
@@ -33,7 +33,7 @@ export const maxValueProperty = new Property<RangeSeekBarBase, number>({
     name: "maxValue",
     defaultValue: 0,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'maxValue' must be a number");
@@ -45,7 +45,7 @@ export const minStartValueProperty = new Property<RangeSeekBarBase, number>({
     name: "minStartValue",
     defaultValue: 0,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'minStartValue' must be a number");
@@ -57,7 +57,7 @@ export const maxStartValueProperty = new Property<RangeSeekBarBase, number>({
     name: "maxStartValue",
     defaultValue: 0,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'maxStartValue' must be a number");
@@ -69,7 +69,7 @@ export const minRangeProperty = new Property<RangeSeekBarBase, number>({
     name: "minRange",
     defaultValue: 0,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'minRange' must be a number");
@@ -81,7 +81,7 @@ export const stepProperty = new Property<RangeSeekBarBase, number>({
     name: "step",
     defaultValue: 1,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'step' must be a number");
@@ -89,13 +89,12 @@ export const stepProperty = new Property<RangeSeekBarBase, number>({
 });
 stepProperty.register(RangeSeekBarBase);
 
-//Style
-
+// Style
 export const cornerRadiusProperty = new Property<RangeSeekBarBase, number>({
     name: "cornerRadius",
     defaultValue: 1,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'cornerRadius' must be a number");
@@ -107,7 +106,7 @@ export const cornerRadiusCssProperty = new CssProperty<Style, number>({
     name: "cornerRadius",
     cssName: "corner-radius",
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'cornerRadius' must be a number");
@@ -119,7 +118,7 @@ export const barHeightProperty = new Property<RangeSeekBarBase, number>({
     name: "barHeight",
     defaultValue: 2,
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'barHeight' must be a number");
@@ -131,7 +130,7 @@ export const barHeightCssProperty = new CssProperty<Style, number>({
     name: "barHeight",
     cssName: "bar-height",
     valueConverter: (v) => {
-        if (parseFloat(v) != NaN) {
+        if (parseFloat(v) !== NaN) {
             return parseFloat(v);
         }
         throw new Error("Property 'barHeight' must be a number");

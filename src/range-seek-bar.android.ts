@@ -39,10 +39,10 @@ export class RangeSeekBar extends RangeSeekBarBase {
         crystalRangeSeekBar.setBarHeight(5).apply();
         crystalRangeSeekBar.setMinStartValue(0).apply();
         crystalRangeSeekBar.setMaxStartValue(0).apply();
-        initRangeSeekbarChangeListener()
+        initRangeSeekbarChangeListener();
         const rangeSeekbarChangeListener = new RangeSeekbarChangeListener(new WeakRef<RangeSeekBar>(this));
         crystalRangeSeekBar.setOnRangeSeekbarChangeListener(rangeSeekbarChangeListener);
-        initRangeSeekbarFinalValueListener()
+        initRangeSeekbarFinalValueListener();
         const rangeSeekbarFinalValueListener = new RangeSeekbarFinalValueListener(new WeakRef<RangeSeekBar>(this));
         crystalRangeSeekBar.setOnRangeSeekbarFinalValueListener(rangeSeekbarFinalValueListener);
         return crystalRangeSeekBar;
@@ -157,7 +157,7 @@ export class RangeSeekBar extends RangeSeekBarBase {
     }
 }
 
-//RangeSeekbarChangeListener START
+// RangeSeekbarChangeListener START
 interface RangeSeekbarChangeListener extends java.lang.Object, com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
     new (owner: WeakRef<RangeSeekBar>): RangeSeekbarChangeListener;
 }
@@ -192,9 +192,9 @@ function initRangeSeekbarChangeListener() {
     }
     RangeSeekbarChangeListener = RangeSeekbarChangeListenerImpl as any;
 }
-//RangeSeekbarChangeListener END
+// RangeSeekbarChangeListener END
 
-//RangeSeekbarFinalValueListener START
+// RangeSeekbarFinalValueListener START
 interface RangeSeekbarFinalValueListener extends java.lang.Object, com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
     new (owner: WeakRef<RangeSeekBar>): RangeSeekbarFinalValueListener;
 }
@@ -230,4 +230,4 @@ function initRangeSeekbarFinalValueListener() {
     }
     RangeSeekbarFinalValueListener = RangeSeekbarFinalValueListenerImpl as any;
 }
-//RangeSeekbarFinalValueListener END
+// RangeSeekbarFinalValueListener END
