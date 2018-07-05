@@ -1,0 +1,1 @@
+export * from "./nativescript-range-seek-bar.common";
