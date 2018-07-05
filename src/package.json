@@ -1,7 +1,7 @@
 {
     "name": "nativescript-range-seek-bar",
-    "version": "1.0.0",
-    "description": "Your awesome NativeScript plugin.",
+    "version": "1.0.1",
+    "description": "NativeScript Range Seek Bar widget",
     "main": "range-seek-bar",
     "typings": "index.d.ts",
     "nativescript": {
@@ -42,10 +42,10 @@
         "email": "lexuanhoang2506@gmail.com"
     },
     "bugs": {
-        "url": "https://github.com/HoangJK/nativescript-auto-complete-edit-text/issues"
+        "url": "https://github.com/HoangJK/nativescript-range-seek-bar/issues"
     },
     "license": "Apache-2.0",
-    "homepage": "https://github.com/HoangJK/nativescript-auto-complete-edit-text",
+    "homepage": "https://github.com/HoangJK/nativescript-range-seek-bar",
     "readmeFilename": "README.md",
     "devDependencies": {
         "tns-core-modules": "4.1.0",
