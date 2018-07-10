@@ -69,7 +69,7 @@ import { NativeScriptUIRangeSeekBarModule } from "nativescript-range-seek-bar/an
 }
 ```
 ```ts
-// app.componnet.ts
+// app.component.ts
 import { Component } from "@angular/core";
 import { RangeSeekBarEventData } from "nativescript-range-seek-bar";
 
