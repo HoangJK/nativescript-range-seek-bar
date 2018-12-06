@@ -31,3 +31,5 @@ demo/report/report.html
 demo/report/stats.json
 demo-ng/report/report.html
 demo-ng/report/stats.json
+*.metadata.json
+*.ngsummary.json
