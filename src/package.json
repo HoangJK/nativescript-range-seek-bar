@@ -6,16 +6,14 @@
   "typings": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "android": "4.1.2",
-      "ios": "4.1.0"
+      "android": "6.0.0",
+      "ios": "6.0.1"
     }
   },
   "scripts": {
     "tsc": "tsc -skipLibCheck",
     "build": "npm i && tsc && ngc",
     "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
-    "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
-    "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "plugin.link": "npm link && cd ../demo && npm link nativescript-auto-complete-text-field && cd ../src",
     "plugin.tscwatch": "npm run tsc -- -w",
@@ -48,23 +46,23 @@
   "homepage": "https://github.com/HoangJK/nativescript-range-seek-bar",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "tns-core-modules": "4.1.0",
-    "tns-platform-declarations": "4.1.0",
-    "typescript": "~2.7.2",
-    "nativescript-angular": "~5.2.0",
-    "@angular/animations": "~5.2.0",
-    "@angular/common": "~5.2.0",
-    "@angular/compiler": "~5.2.0",
-    "@angular/core": "~5.2.0",
-    "@angular/forms": "~5.2.0",
-    "@angular/http": "~5.2.0",
-    "@angular/platform-browser": "~5.2.0",
-    "@angular/platform-browser-dynamic": "~5.2.0",
-    "@angular/router": "~5.2.0",
-    "@angular/compiler-cli": "~5.2.0",
-    "rxjs": "~5.5.5",
-    "zone.js": "~0.8.4",
-    "tslint": "~5.4.3"
+    "tns-core-modules": "^6.0.0",
+    "tns-platform-declarations": "^6.0.0",
+    "typescript": "~3.4.5",
+    "nativescript-angular": "~8.0.0",
+    "@angular/animations": "~8.0.0",
+    "@angular/common": "~8.0.0",
+    "@angular/compiler": "~8.0.0",
+    "@angular/core": "~8.0.0",
+    "@angular/forms": "~8.0.0",
+    "@angular/http": "~8.0.0-beta.10",
+    "@angular/platform-browser": "~8.0.0",
+    "@angular/platform-browser-dynamic": "~8.0.0",
+    "@angular/router": "~8.0.0",
+    "@angular/compiler-cli": "~8.0.0",
+    "rxjs": "~6.5.0",
+    "zone.js": "~0.9.1",
+    "tslint": "~5.11.0"
   },
   "bootstrapper": "nativescript-plugin-seed"
 }
