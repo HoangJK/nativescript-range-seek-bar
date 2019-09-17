@@ -20,6 +20,7 @@ demo/lib
 demo/platforms
 !demo-ng/karma.conf.js
 !demo-ng/app/tests/*.js
+!demo-ng/webpack.config.js
 demo-ng/*.d.ts
 !demo-ng/references.d.ts
 demo-ng/lib
