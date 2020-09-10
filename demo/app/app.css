@@ -1,4 +1,7 @@
-﻿.range-seek-bar {
+﻿@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/default.css';
+
+.range-seek-bar {
     bar-color: #8990C4;
     bar-highlight-color: #2434AD;
     thumb-color: #1A246D;
