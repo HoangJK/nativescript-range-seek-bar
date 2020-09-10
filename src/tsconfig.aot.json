@@ -6,19 +6,23 @@
         "removeComments": true,
         "declaration": true,
         "experimentalDecorators": true,
-        "target": "es5",
-        "module": "commonjs",
+        "target": "ES2017",
+        "module": "esnext",
         "outDir": "./",
         "lib": [
-            "es6",
-            "dom",
-            "es2015.iterable"
+            "es2018", "es2017", "dom", "es6"
+        ],
+        "plugins": [
+            {
+                "transform": "@nativescript/webpack/transformers/ns-transform-native-classes",
+                "type": "raw"
+            }
         ],
         "rootDir": ".",
         "baseUrl": ".",
         "paths": {
             "*": [
-                "./node_modules/tns-core-modules/*",
+                "./node_modules/@nativescript/core/*",
                 "./node_modules/*"
             ]
         },
