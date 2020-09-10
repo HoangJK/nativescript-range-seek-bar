@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { NativeScriptHttpClientModule, NativeScriptRouterModule } from "@nativescript/angular";
 import { Routes } from "@angular/router";
 
 import { ItemsComponent } from "./item/items.component";
