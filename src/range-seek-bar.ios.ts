@@ -52,6 +52,14 @@ export class RangeSeekBar extends RangeSeekBarBase {
         this.nativeView.delegate = this.rangeSeekBarDelegate = TTRangeSliderDelegateImpl.initWithOwner(new WeakRef<RangeSeekBar>(this));
     }
 
+    public updateMinStartValue(minValue: number) {
+        this.nativeView.selectedMinimum = minValue;
+    }
+
+    public updateMaxStartValue(maxValue: number) {
+        this.nativeView.selectedMaximum = maxValue;
+    }
+
     public [minValueProperty.setNative](value: number) {
         this.nativeView.minValue = value;
     }

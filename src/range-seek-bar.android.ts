@@ -49,6 +49,16 @@ export class RangeSeekBar extends RangeSeekBarBase {
         return crystalRangeSeekBar;
     }
 
+    public updateMinStartValue(minValue: number) {
+        this.nativeView.setMinStartValue(minValue).apply();
+        this.nativeView.setMinStartValue(minValue);
+    }
+
+    public updateMaxStartValue(maxValue: number) {
+        this.nativeView.setMaxStartValue(maxValue).apply();
+        this.nativeView.setMinStartValue(maxValue);
+    }
+
     public [minValueProperty.setNative](value: number) {
         this.nativeView.setMinValue(value);
     }
