@@ -179,8 +179,8 @@ function initRangeSeekbarChangeListener() {
     if (RangeSeekbarChangeListener) {
         return;
     }
-    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener])
     @NativeClass()
+    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener])
     class RangeSeekbarChangeListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
 
         constructor(private owner: WeakRef<RangeSeekBar>) {
@@ -218,8 +218,8 @@ function initRangeSeekbarFinalValueListener() {
         return;
     }
 
-    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener])
     @NativeClass()
+    @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener])
     class RangeSeekbarFinalValueListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
 
         constructor(private owner: WeakRef<RangeSeekBar>) {
