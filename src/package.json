@@ -1,6 +1,6 @@
 {
-  "name": "@nativescript/range-seek-bar",
-  "version": "2.0.0",
+  "name": "nativescript-range-seek-bar",
+  "version": "1.0.3",
   "description": "NativeScript Range Seek Bar widget",
   "main": "range-seek-bar",
   "typings": "index.d.ts",
