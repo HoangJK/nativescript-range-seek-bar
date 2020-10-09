@@ -26,8 +26,8 @@ import {
     rightThumbHighlightProperty,
     rightThumbHighlightCssProperty,
 } from "./range-seek-bar.common";
-import { Color } from "tns-core-modules/color";
-import { layout } from "tns-core-modules/utils/utils";
+
+import { Color, Utils } from '@nativescript/core';
 
 export class RangeSeekBar extends RangeSeekBarBase {
     nativeView: TTRangeSlider;
@@ -38,8 +38,8 @@ export class RangeSeekBar extends RangeSeekBarBase {
         rangeSlider.hideLabels = true;
         rangeSlider.enableStep = true;
         rangeSlider.step = 1;
-        rangeSlider.handleDiameter = layout.toDeviceIndependentPixels(20 * 2);
-        rangeSlider.lineHeight = layout.toDeviceIndependentPixels(5);
+        rangeSlider.handleDiameter = Utils.layout.toDeviceIndependentPixels(20 * 2);
+        rangeSlider.lineHeight = Utils.layout.toDeviceIndependentPixels(5);
         rangeSlider.selectedMinimum = 0;
         rangeSlider.selectedMaximum = 0;
         rangeSlider.selectedHandleDiameterMultiplier = 1.0;
@@ -50,6 +50,14 @@ export class RangeSeekBar extends RangeSeekBarBase {
         super.onLoaded();
         this.nativeView.frame = CGRectMake(0, 0, this.nativeView.superview.frame.size.width, 30);
         this.nativeView.delegate = this.rangeSeekBarDelegate = TTRangeSliderDelegateImpl.initWithOwner(new WeakRef<RangeSeekBar>(this));
+    }
+
+    public updateMinStartValue(minValue: number) {
+        this.nativeView.selectedMinimum = minValue;
+    }
+
+    public updateMaxStartValue(maxValue: number) {
+        this.nativeView.selectedMaximum = maxValue;
     }
 
     public [minValueProperty.setNative](value: number) {
@@ -77,19 +85,19 @@ export class RangeSeekBar extends RangeSeekBarBase {
     }
 
     public [cornerRadiusProperty.setNative](value: number) {
-        this.nativeView.handleDiameter = layout.toDeviceIndependentPixels(value * 2);
+        this.nativeView.handleDiameter = Utils.layout.toDeviceIndependentPixels(value * 2);
     }
 
     public [cornerRadiusCssProperty.setNative](value: number) {
-        this.nativeView.handleDiameter = layout.toDeviceIndependentPixels(value * 2);
+        this.nativeView.handleDiameter = Utils.layout.toDeviceIndependentPixels(value * 2);
     }
 
     public [barHeightProperty.setNative](value: number) {
-        this.nativeView.lineHeight = layout.toDeviceIndependentPixels(value);
+        this.nativeView.lineHeight = Utils.layout.toDeviceIndependentPixels(value);
     }
 
     public [barHeightCssProperty.setNative](value: number) {
-        this.nativeView.lineHeight = layout.toDeviceIndependentPixels(value);
+        this.nativeView.lineHeight = Utils.layout.toDeviceIndependentPixels(value);
     }
 
     public [barColorProperty.setNative](value: Color) {
@@ -118,6 +126,7 @@ export class RangeSeekBar extends RangeSeekBarBase {
 }
 
 @ObjCClass(TTRangeSliderDelegate)
+@NativeClass()
 export class TTRangeSliderDelegateImpl extends NSObject implements TTRangeSliderDelegate {
     public owner: WeakRef<RangeSeekBar>;
 

@@ -26,7 +26,8 @@ import {
     rightThumbHighlightProperty,
     rightThumbHighlightCssProperty,
 } from "./range-seek-bar.common";
-import { Color } from "tns-core-modules/color";
+
+import { Color } from '@nativescript/core';
 
 export class RangeSeekBar extends RangeSeekBarBase {
     nativeView: com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
@@ -46,6 +47,16 @@ export class RangeSeekBar extends RangeSeekBarBase {
         const rangeSeekbarFinalValueListener = new RangeSeekbarFinalValueListener(new WeakRef<RangeSeekBar>(this));
         crystalRangeSeekBar.setOnRangeSeekbarFinalValueListener(rangeSeekbarFinalValueListener);
         return crystalRangeSeekBar;
+    }
+
+    public updateMinStartValue(minValue: number) {
+        this.nativeView.setMinStartValue(minValue).apply();
+        this.nativeView.setMinStartValue(minValue);
+    }
+
+    public updateMaxStartValue(maxValue: number) {
+        this.nativeView.setMaxStartValue(maxValue).apply();
+        this.nativeView.setMinStartValue(maxValue);
     }
 
     public [minValueProperty.setNative](value: number) {
@@ -168,6 +179,7 @@ function initRangeSeekbarChangeListener() {
     if (RangeSeekbarChangeListener) {
         return;
     }
+    @NativeClass()
     @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener])
     class RangeSeekbarChangeListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener {
 
@@ -206,6 +218,7 @@ function initRangeSeekbarFinalValueListener() {
         return;
     }
 
+    @NativeClass()
     @Interfaces([com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener])
     class RangeSeekbarFinalValueListenerImpl extends java.lang.Object implements com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener {
 

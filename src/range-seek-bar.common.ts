@@ -1,6 +1,11 @@
-import { View, Property, EventData } from "tns-core-modules/ui/core/view";
-import { Style, CssProperty } from "tns-core-modules/ui/text-base";
-import { Color } from "tns-core-modules/color";
+import {
+    View,
+    Property,
+    EventData,
+    Style,
+    CssProperty,
+    Color,
+} from "@nativescript/core";
 
 export interface RangeSeekBarEventData extends EventData {
     eventName: string;
@@ -14,6 +19,9 @@ export interface RangeSeekBarEventData extends EventData {
 export class RangeSeekBarBase extends View {
     public static rangeSeekBarChangedEvent = "rangeSeekBarChanged";
     public static rangeSeekBarFinalValueEvent = "rangeSeekBarFinalValue";
+
+    public updateMinStartValue(minValue: number) { }
+    public updateMaxStartValue(maxValue: number) { }
 }
 
 // Property
