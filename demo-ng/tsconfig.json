@@ -30,7 +30,7 @@
         "./app/main.ts"
     ],
     "exclude": [
-        "../src/node_modules",
+        "../src",
         "node_modules",
         "platforms"
     ]
