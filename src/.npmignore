@@ -1,5 +1,6 @@
 *.map
 *.ts
+*.tgz
 !*.d.ts
 tsconfig.json
 scripts/*

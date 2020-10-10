@@ -1,7 +1,7 @@
 {
   "main": "main.js",
   "dependencies": {
-    "nativescript-range-seek-bar": "../src",
+    "nativescript-range-seek-bar": "../dist/nativescript-range-seek-bar-2.0.0.tgz",
     "@nativescript/theme": "^2.3.3",
     "@nativescript/core": "7.0.0"
   },

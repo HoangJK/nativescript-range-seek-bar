@@ -19,6 +19,9 @@ export interface RangeSeekBarEventData extends EventData {
 export class RangeSeekBarBase extends View {
     public static rangeSeekBarChangedEvent = "rangeSeekBarChanged";
     public static rangeSeekBarFinalValueEvent = "rangeSeekBarFinalValue";
+
+    public updateMinStartValue(minValue: number) { }
+    public updateMaxStartValue(maxValue: number) { }
 }
 
 // Property

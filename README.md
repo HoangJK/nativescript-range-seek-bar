@@ -5,7 +5,13 @@ A NativeScript Range Seek Bar widget.
 
 [Crystal Range Seekbar](https://github.com/syedowaisali/crystal-range-seekbar) for Android
 ## Installation
+
+#### NativeScript 7+:
 Run `tns plugin add nativescript-range-seek-bar`
+
+#### NativeScript prior to 7:
+Run `tns plugin add nativescript-range-seek-bar@1.0.3`
+
 ## API
 ### Events
 * **rangeSeekBarChanged**  
