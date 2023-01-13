@@ -25,7 +25,7 @@
     "@nativescript/android": "7.0.0",
     "@nativescript/ios": "7.0.0",
     "@nativescript/types": "",
-    "@nativescript/webpack": "3.0.0",
+    "@nativescript/webpack": "5.0.12",
     "@ngtools/webpack": "10.0.0",
     "babel-traverse": "6.26.0",
     "babel-types": "6.26.0",
